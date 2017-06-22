@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+var gameover_text = new sjs.Text("FAIL!",220,"red");
+var restartBtn = new sjs.Button("Restart", function(){
+window.location = "pong.html";
+});
+restartBtn.center().offset(0,70); 
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+
+<br><br><br>
+<div id="target" style="margin:auto;background:grey;"></div>
+</body>
+</html>
