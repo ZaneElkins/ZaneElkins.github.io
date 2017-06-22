@@ -22,7 +22,7 @@ function start(){
 		//Paddle 1
 		var paddle1 = new sjs.Image("Images/donkey_kick_by_budgie_lover-d4vainq.gif");
 		paddle1.type= "paddle";
-		paddle1.center().bottom();
+		paddle1.moveTo(530,215);
 		paddle1.setSize(70,70);
 		setTimeout(function(){
 			paddle1.followx(sjs.mouse); 
