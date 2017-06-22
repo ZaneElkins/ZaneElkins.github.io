@@ -24,7 +24,10 @@ function start(){
 		paddle1.type= "paddle";
 		paddle1.center().bottom();
 		paddle1.setSize(70,70);
-		paddle1.followx(sjs.mouse); 
+		setTimeout(function(){
+			paddle1.followx(sjs.mouse); 
+		},500);
+	
 
 		var topsc = new sjs.Image("Images/black.png");
 		topsc.setSize(530,30);
