@@ -1,0 +1,93 @@
+
+<html>
+<head>
+<title> DONKEY PONG OFFICIAL </title> 
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script> 
+<script> 
+function start(){
+	sjs.open("target", 530,430);
+
+
+//ball object and properties
+		var ball = new sjs.Image ("Images/Emoticon-Voetbal-Bal-anim.gif");
+		ball.type = "ball";
+		ball.setSize(58,58);
+		ball.friction = -.002; 
+		ball.bounce();
+		ball.pushUp(5);
+		ball.pushLeft(4);  
+		//ball.node.id = "j";
+		ball.setSize(25,25);
+
+		//Paddle 1
+		var paddle1 = new sjs.Image("Images/donkey_kick_by_budgie_lover-d4vainq.gif");
+		paddle1.type= "paddle";
+		paddle1.center().bottom();
+		paddle1.setSize(70,70);
+		paddle1.followx(sjs.mouse); 
+
+		var topsc = new sjs.Image("Images/black.png");
+		topsc.setSize(530,30);
+		topsc.type="top";
+		topsc.moveTo(0,0);
+		topsc.node.style.background = "black";
+	
+
+
+		var leftsc = new sjs.Image("Images/black.png");
+		leftsc.setSize(30,430);
+		leftsc.type="left";
+		leftsc.moveTo(-30,0);
+		leftsc.node.style.background = "black";
+
+		var rightsc = new sjs.Image("Images/black.png");
+		rightsc.setSize(30,400);
+		rightsc.type="right";
+		rightsc.moveTo(530,430);
+		rightsc.node.style.background = "black";
+
+
+		//Score
+		var score = 0;
+		var score_txt = new sjs.Text("Kicks: 0", 21, "orange");
+
+
+		sjs.onHit("ball","paddle", function(ball,paddle){
+			score = score + 1;
+            score_txt.setText("Kicks: "+score);
+			sjs.bounceOff(ball,paddle);
+		}); 
+
+
+
+
+
+
+		sjs.onHit("ball",["bottom_screen"], function(){
+			window.location = "gameover.html"; 
+		});
+
+		sjs.onHit("ball",["left","right","top"], function(x,y){
+			sjs.bounceOff(x,y);
+		});
+
+
+		
+
+}
+  //end start
+</script> 
+<style>
+#j{
+	width:1000px;
+	height:1000px;
+}
+</style>
+
+</head> 
+<body onload="start()">
+<h1> DONKEY PONG </h1>
+<div id="target" style="margin:auto;background:grey;"></div>
+</body> 
+</html> 
+
