@@ -6,15 +6,21 @@
 function start(){
 sjs.open();
 
-var gameover_text = new sjs.Text("DONKEY PONG",100,"red");
+var gameover_text = new sjs.Text("DONKEY",115,"blue");
+var pong_text = new sjs.Text("PONG",140,"blue");
+
+pong_text.moveTo(40,75);
 
 var restartBtn = new sjs.Button("START", function(){
 window.location = "Pong.html";
 });
-restartBtn.center().offset(0,70); 
+restartBtn.center().offset(-45,50); 
+restartBtn.node.style.width = "150px";
+restartBtn.node.style.height = "100px";
+restartBtn.node.style.fontSize = "25px";
 
 
-// var creation_text = new sjs.Text("Created by Zane Elkins and Seth Iorg",10,"black"); 
+// var creation_text = new sjs.Text("Created by Zane Elkins and Seth Iorg",7,"black"); 
 // creation_text.moveTo(20,350);
 // creation
 
