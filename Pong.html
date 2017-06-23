@@ -59,6 +59,7 @@ function start(){
 			score = score + 1;
             score_txt.setText("Kicks: "+score);
 			sjs.bounceOff(ball,paddle);
+			localStorage.setItem("score", score);
 		}); 
 
 
@@ -89,8 +90,8 @@ function start(){
 
 </head> 
 <body onload="start()">
-<h1> DONKEY PONG </h1>
 <div id="target" style="margin:auto;background:grey;"></div>
+<h1 style="text-align:center;font-size:5em;"> DONKEY PONG </h1>
 </body> 
 </html> 
 

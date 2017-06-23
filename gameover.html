@@ -5,7 +5,12 @@
 <script>
 function start(){
 sjs.open();
-var gameover_text = new sjs.Text("FAIL!",220,"red");
+
+var score_txt = new sjs.Text("Your Score: 0", 21, "blue");
+score_txt.setText("Kicks this round: "+localStorage.getItem("score")); 
+score_txt.moveTo(165,300);
+
+var gameover_text = new sjs.Text("FAIL!",216,"blue");
 var restartBtn = new sjs.Button("Restart", function(){
 window.location = "Pong.html";
 });
@@ -20,3 +25,4 @@ restartBtn.center().offset(0,70);
 <div id="target" style="margin:auto;background:grey;"></div>
 </body>
 </html>
+ 
