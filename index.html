@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://simplycodingcourses.com/files/simplyjs/simply.js"></script>
+<script>
+function start(){
+sjs.open();
+
+var gameover_text = new sjs.Text("DONKEY PONG",100,"red");
+
+var restartBtn = new sjs.Button("START", function(){
+window.location = "Pong.html";
+});
+restartBtn.center().offset(0,70); 
+
+
+// var creation_text = new sjs.Text("Created by Zane Elkins and Seth Iorg",10,"black"); 
+// creation_text.moveTo(20,350);
+// creation
+
+} //end start
+</script>
+</head>
+<body onload="start()">
+
+<br><br><br>
+<div id="target" style="margin:auto;background:grey;"></div>
+<p style="margin-left:17.5em;">Created by Zane Elkins and Seth Iorg</p>
+</body>
+</html>
